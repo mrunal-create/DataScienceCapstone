@@ -33,7 +33,7 @@ import streamlit as st
 OPENAI_API_KEY = "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"
 
 def read_from_s3(file_name):
-    s3 = boto3.client("s3",aws_access_key_id="AKIAZI2LGNMK4B4S5POQ",aws_secret_access_key="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")
+    s3 = boto3.client("s3",aws_access_key_id="",aws_secret_access_key="")
     obj = s3.get_object(Bucket='capstonebucket11', Key= file_name)
     df = pd.read_csv(io.BytesIO(obj['Body'].read()))
     return df
